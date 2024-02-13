@@ -1,52 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Ricardo Homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
-
   <body>
-   
+    <header class="header">
+      <a href="#home" class="logo">Ricardo <span>Lemser</span></a>
 
-    <main class="main">
-        <header class="header">
-            <h1>Ricardo Homepage</h1>
-          </header>
-      <section class="content">
-        <h2 id="experience">My Experience</h2>
-        <p>I have worked for the following partners:</p>
-        <ul>
-          <li>First</li>
-          <li>Second</li>
-          <li>Third</li>
-        </ul>
-      </section>
-      <section class="content2">
-        <h2 id="skills">My Skills</h2>
-        <p>I have the following skills:</p>
-        <ul>
-          <li>First</li>
-          <li>Second</li>
-          <li>Third</li>
-        </ul>
-      </section>
-      <section class="content3">
-        <h2 id="contact">Contact</h2>
-        <p>email <a href="mailto:ricardo.lemser@gmail.com">ricardo.lemser@gmail.com</a>.</p>
-      </section>
-      <section class=" content4">
-        <h2 id="text">Random Text</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      <i class="bx bx-menu" id="menu-icon"></i>
+
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-img">
+        <img src="image.jpg" alt="" />
+      </div>
+
+      <div class="home-content">
+        <h1>It's <span>Ricardo</span></h1>
+        <h3 class="text-animation">I'm a <span></span></h3>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
+          saepe non veniam ipsam odio, minima ea, numquam molestias veritatis
+          quam accusantium, qui odit corrupti quidem repellat sit suscipit nihil
+          tenetur?
         </p>
-      </section>
-    </main>
-    <footer>
-        <nav class="footer">
-            <a href="index.html"><img footer src="../ressources/icons8-zuhause-50.png" alt="home icon"></a>
-            <a href="bookmark.html"><img footer src="../ressources/icons8-herzen-64.png" alt="bookmark icon"></a>
-            <a href="profile.html"><img footer src="../ressources/icons8-gast-männlich-80.png" alt="profile icon"></button>
-        </nav>
-    </footer>
+
+        <div class="social-icons">
+          <a href="#"><i class="bx bxl-linkedin"></i></a>
+          <a href="#"><i class="bx bxl-instagram"></i></a>
+          <a href="#"><i class="bx bxl-facebook-square"></i></a>
+          <a href="#"><i class="bx bxl-twitter"></i></a>
+        </div>
+
+        <a href="#" class="btn">Hire Me</a>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
   </body>
 </html>
