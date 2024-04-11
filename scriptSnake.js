@@ -15,6 +15,71 @@ let gameInterval;
 let gameSpeedDelay = 200;
 let gameStarted = false;
 
+// Gibby Code for mobile:
+// Define variables for touch events
+let touchStartX = 0;
+let touchStartY = 0;
+
+// Touch start event listener
+board.addEventListener("touchstart", (event) => {
+  touchStartX = event.touches[0].clientX;
+  touchStartY = event.touches[0].clientY;
+});
+
+// Touch end event listener
+board.addEventListener("touchend", (event) => {
+  const touchEndX = event.changedTouches[0].clientX;
+  const touchEndY = event.changedTouches[0].clientY;
+
+  const deltaX = touchEndX - touchStartX;
+  const deltaY = touchEndY - touchStartY;
+
+  if (Math.abs(deltaX) > Math.abs(deltaY)) {
+    // Horizontal swipe
+    if (deltaX > 0) {
+      direction = "right";
+    } else {
+      direction = "left";
+    }
+  } else {
+    // Vertical swipe
+    if (deltaY > 0) {
+      direction = "down";
+    } else {
+      direction = "up";
+    }
+  }
+});
+
+// Keypress event listener (for keyboard)
+function handleKeyPress(event) {
+  event.preventDefault(); // Prevent scrolling on mobile
+  if (
+    (!gameStarted && event.code === "Space") ||
+    (!gameStarted && event.key === " ")
+  ) {
+    startGame();
+  } else {
+    switch (event.key) {
+      case "ArrowUp":
+        direction = "up";
+        break;
+      case "ArrowDown":
+        direction = "down";
+        break;
+      case "ArrowLeft":
+        direction = "left";
+        break;
+      case "ArrowRight":
+        direction = "right";
+        break;
+    }
+  }
+}
+
+// Add event listeners for keyboard input
+document.addEventListener("keydown", handleKeyPress);
+
 // Draw game map, snake, food
 function draw() {
   board.innerHTML = "";
