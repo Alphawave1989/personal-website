@@ -102,3 +102,51 @@ body,
   color: var(--main-color);
   border-bottom: 3px solid var(--main-color);
 }
+
+/* Default styles for the game board */
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr); /* Adjust grid columns */
+  grid-template-rows: repeat(20, 1fr); /* Adjust grid rows */
+  gap: 1px;
+  border: 2px solid #333;
+  background-color: #ddd;
+  width: 80%; /* Adjust width for smaller screens */
+  max-width: 400px; /* Set maximum width */
+  margin: 20px auto; /* Center the game board */
+  padding: 10px;
+}
+
+/* Responsive font size for scores and instruction text */
+.scores,
+#instruction-text,
+#logo {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.5em; /* Adjust font size for smaller screens */
+}
+
+/* Hide logo on smaller screens */
+#logo {
+  display: block; /* By default, show logo */
+}
+
+@media (max-width: 600px) {
+  /* Adjust game board size for smaller screens */
+  #game-board {
+    width: 90%; /* Adjust width for very small screens */
+    max-width: 300px; /* Decrease maximum width */
+  }
+
+  /* Reduce font size for smaller screens */
+  .scores,
+  #instruction-text,
+  #logo {
+    font-size: 1.2em; /* Decrease font size for smaller screens */
+  }
+
+  /* Hide logo on smaller screens */
+  #logo {
+    display: none; /* Hide logo on smaller screens */
+  }
+}
